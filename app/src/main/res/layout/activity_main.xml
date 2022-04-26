@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mainVM"
+            type="com.example.wantedtest.viewmodel.MainViewModel"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainContainerCL"
+        app:layout_constraintBottom_toBottomOf="@+id/mainHeaderCL"
+        app:layout_constraintTop_toBottomOf="@+id/mainHeaderCL"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainHeaderCL"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edge_round"
+            android:backgroundTint="@color/light_grey"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.9">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_baseline_search_24"
+                android:id="@+id/searchImageView"
+                android:background="@color/light_grey"
+                app:tint="@color/teal_700"
+                android:contentDescription="@string/search_book_icon"
+                >
+
+            </ImageView>
+
+            <EditText
+                android:id="@+id/searchEditTV"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:inputType="text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:hint="@string/search_books"
+                android:text="@={mainVM._searchWord}"
+                android:padding="5dp"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintWidth_percent="0.85"
+                app:layout_constraintStart_toEndOf="@+id/searchImageView"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            </EditText>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainResultCL"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainHeaderCL"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.9">
+            
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Results `+`(` + mainVM.totalResult + ')'}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:id="@+id/resultTV"
+                >
+            </TextView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/mainRecyclerViewCL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainResultCL">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/mainRecyclerView"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:id="@+id/book_items_cardview"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="5dp"
+        android:foreground="?selectableItemBackground"
+        android:tag=""
+        android:clickable="true" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardViewCL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/book_items_Image"
+                android:layout_width="70dp"
+                android:background="@drawable/edge_round"
+                android:layout_height="100dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/book_image"
+                />
+
+            <TextView
+                android:id="@+id/book_items_bookName"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.65"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:textSize="14sp"
+                android:padding="3dp"
+                app:layout_constraintStart_toEndOf="@+id/book_items_Image"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <TextView
+                android:id="@+id/book_items_bookAuthor"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.65"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="12sp"
+                android:padding="3dp"
+                app:layout_constraintStart_toEndOf="@+id/book_items_Image"
+                app:layout_constraintTop_toBottomOf="@+id/book_items_bookName"
+                />
+
+
+
+            <TextView
+                android:id="@+id/book_items_bookDate"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.65"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="12sp"
+                android:padding="3dp"
+                app:layout_constraintStart_toEndOf="@+id/book_items_Image"
+                app:layout_constraintTop_toBottomOf="@+id/book_items_bookAuthor"
+                />
+
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/book_items_heart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:tag="border"
+                android:contentDescription="@string/detail_pages"
+                >
+
+            </ImageView>
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
